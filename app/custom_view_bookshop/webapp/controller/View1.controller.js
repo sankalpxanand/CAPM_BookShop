@@ -180,6 +180,6 @@ sap.ui.define([
                 resetBusy();
                 MessageBox.error("An error occured while updating the book: "+err);
             })
-        }
+        } 
     });
 });
