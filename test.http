@@ -1,0 +1,41 @@
+###
+#
+# Browse Books
+#
+GET http://localhost:4004/odata/v4/catalog/Books
+
+###
+# Browse Book by ID
+#
+GET http://localhost:4004/odata/v4/catalog/Books(550e8400-e29b-41d4-a716-446655440001)
+
+###
+# Insert a new book
+#
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+    "title": "Oliver",
+    "author": "Jinoy",
+    "price": 1000.12,
+    "stock": 11
+}
+
+###
+# Update a book
+#
+PATCH http://localhost:4004/odata/v4/catalog/Books(7dd3ef30-3844-4ddf-8ba3-4b6bcbea5212)
+Content-Type: application/json
+
+{
+    "title": "Harry Porter",
+    "author": "J.K. Rowling",
+    "price": 2000.12,
+    "stock": 22
+}
+
+###
+# Delete a book
+#
+DELETE http://localhost:4004/odata/v4/catalog/Books(7dd3ef30-3844-4ddf-8ba3-4b6bcbea5212)
