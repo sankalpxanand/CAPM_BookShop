@@ -24,6 +24,19 @@
           "odataVersion": "4.01"
         }
       }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "bookshop-display": {
+          "semanticObject": "bookshop",
+          "action": "display",
+          "title": "Bookshop",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
     }
   },
   "sap.ui": {
@@ -142,5 +155,9 @@
     "app": {
       "enableLazyLoading": true
     }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "capm.books"
   }
 }
