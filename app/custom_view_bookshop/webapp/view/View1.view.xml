@@ -81,8 +81,8 @@
                         </tnt:NavigationListGroup>
                         <tnt:NavigationListGroup id="_IDGenNavigationListGroup1" text="Recently used">
                             <tnt:NavigationListItem id="_IDGenNavigationListItem7" text="View Books" icon="sap-icon://kpi-managing-my-area" press=".onViewBookPressed" />
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem8" text="Flight" icon="sap-icon://flight" />
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem9" text="Map" icon="sap-icon://map-2" />
+                            <tnt:NavigationListItem id="_IDGenNavigationListItem8" text="Place Order" icon="sap-icon://cart" press=".onPlaceOrderPressed" />
+                            <tnt:NavigationListItem id="_IDGenNavigationListItem9" text="View Orders" icon="sap-icon://sales-order" press=".onViewOrdersPressed" />
                         </tnt:NavigationListGroup>
                         <tnt:NavigationListGroup id="_IDGenNavigationListGroup2" text="Restricted" enabled="false">
                             <tnt:NavigationListItem id="_IDGenNavigationListItem10" text="Running" icon="sap-icon://physical-activity" />
@@ -241,6 +241,63 @@
                             <Button id="_IDGenButton1" press="updateItem" text="Update"></Button>
                         </VBox>
                     </HBox>
+                </Panel>
+                <!--Panel 4 - Place Order-->
+                <Panel id="Panel4" width="60rem" class="sapUiResponsiveMargin" accessibleRole="Region" visible="false">
+                    <headerToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar2">
+                            <Title id="_IDGenTitle2" text="Place an Order"/>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <HBox id="_IDGenHBoxOrder1">
+                        <VBox id="_IDGenVBoxOrder1">
+                            <Label id="_IDGenLabelBook" text="Book ID"></Label>
+                            <Input placeholder="Enter Book ID" id="orderBookId"></Input>
+                        </VBox>
+                        <VBox id="_IDGenVBoxOrder2">
+                            <Label id="_IDGenLabelQty" text="Quantity"></Label>
+                            <Input placeholder="Enter quantity" id="orderQuantity" type="Number"></Input>
+                        </VBox>
+                    </HBox>
+                    <HBox id="_IDGenHBoxOrder2">
+                        <VBox id="_IDGenVBoxOrder3">
+                            <Button id="_IDGenButtonOrder" press=".onSubmitOrder" text="Place Order"></Button>
+                        </VBox>
+                    </HBox>
+                </Panel>
+
+                <!--Panel 5 - View Orders-->
+                <Panel id="Panel5" headerText="All Orders" visible="false" class="sapUiResponsiveMargin">
+                    <Table id="ordersTable" items="{/Orders}">
+                        <columns>
+                            <Column id="_IDGenColumn8">
+                                <Text id="_IDGenText13" text="Order ID"></Text>
+                            </Column>
+                            <Column id="_IDGenColumn9">
+                                <Text id="_IDGenText14" text="Book ID"></Text>
+                            </Column>
+                            <Column id="_IDGenColumn10">
+                                <Text id="_IDGenText15" text="Quantity"></Text>
+                            </Column>
+                            <Column id="_IDGenColumn11">
+                                <Text id="_IDGenText16" text="Total Price"></Text>
+                            </Column>
+                            <Column id="_IDGenColumn12">
+                                <Text id="_IDGenText17" text="Order Date"></Text>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem id="_IDGenColumnListItem1">
+                                <cells>
+                                    <Text id="_IDGenText18" text="{ID}"></Text>
+                                    <Text id="_IDGenText19" text="{book_ID}"></Text>
+                                    <Text id="_IDGenText20" text="{quantity}"></Text>
+                                    <Text id="_IDGenText21" text="{totalPrice}"></Text>
+                                    <Text id="_IDGenText22" text="{orderDate}"></Text>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
                 </Panel>
             </VBox>
         </HBox>

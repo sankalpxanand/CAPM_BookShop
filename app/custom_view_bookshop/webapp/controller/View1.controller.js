@@ -27,6 +27,22 @@ sap.ui.define([
             var location = this.getView().byId("location").getValue();
             var genre = this.getView().byId("genre").getValue();
 
+            // Frontend validations
+            if (!title.trim()) {
+                MessageBox.error("Title cannot be empty");
+                return;
+            }
+
+            if (!price || price <= 0) {
+                MessageBox.error("Price must be greater than zero");
+                return;
+            }
+
+            if (stock === undefined || stock < 0) {
+                MessageBox.error("Stock cannot be negative");
+                return;
+            }
+
             var oModel = this.getView().getModel();
 
             var oContext = oModel.bindList("/Books").create({
@@ -69,10 +85,12 @@ sap.ui.define([
             oPanel.setVisible(true);
         },
 
-        hideAllPanels: function(){
+        hideAllPanels: function() {
             this.byId("Panel1").setVisible(false);
             this.byId("Panel2").setVisible(false);
             this.byId("Panel3").setVisible(false);
+            this.byId("Panel4").setVisible(false);
+            this.byId("Panel5").setVisible(false);
         },
 
         // for fragment functionality:
@@ -156,6 +174,22 @@ sap.ui.define([
             var location = this.getView().byId("location1").getValue();
             var genre = this.getView().byId("genre1").getValue();
 
+            // Frontend validations
+            if (!title.trim()) {
+                MessageBox.error("Title cannot be empty");
+                return;
+            }
+
+            if (!price || price <= 0) {
+                MessageBox.error("Price must be greater than zero");
+                return;
+            }
+
+            if (stock === undefined || stock < 0) {
+                MessageBox.error("Stock cannot be negative");
+                return;
+            }
+
             var update_oModel = this.getView().getModel();
             var sPath = "/Books('"+itemCode+"')";
             var oContext = update_oModel.bindContext(sPath).getBoundContext();
@@ -180,6 +214,51 @@ sap.ui.define([
                 resetBusy();
                 MessageBox.error("An error occured while updating the book: "+err);
             })
-        } 
+        },
+        
+        onPlaceOrderPressed: function() {
+            this.hideAllPanels();
+            var oPanel = this.byId("Panel4");
+            oPanel.setVisible(true);
+        },
+
+        onViewOrdersPressed: function() {
+            this.hideAllPanels();
+            var oPanel = this.byId("Panel5");
+            oPanel.setVisible(true);
+        },
+
+        onSubmitOrder: function() {
+            var bookId = this.getView().byId("orderBookId").getValue();
+            var quantity = parseInt(this.getView().byId("orderQuantity").getValue());
+
+            // Basic frontend validation
+            if (!bookId.trim()) {
+                MessageBox.error("Please enter a Book ID");
+                return;
+            }
+
+            if (!quantity || quantity <= 0) {
+                MessageBox.error("Please enter a valid quantity greater than zero");
+                return;
+            }
+
+            var oModel = this.getView().getModel();
+
+            var oContext = oModel.bindList("/Orders").create({
+                "book_ID": bookId,
+                "quantity": quantity
+            });
+
+            oContext.created().then(() => {
+                MessageBox.success("Order placed successfully!");
+                // Clear the fields
+                this.getView().byId("orderBookId").setValue(null);
+                this.getView().byId("orderQuantity").setValue(null);
+            }).catch((err) => {
+                MessageBox.error("Error placing order: " + err.message);
+                console.log("Error placing order: " + err);
+            });
+        },
     });
 });

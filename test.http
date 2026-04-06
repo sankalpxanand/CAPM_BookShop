@@ -39,3 +39,84 @@ Content-Type: application/json
 # Delete a book
 #
 DELETE http://localhost:4004/odata/v4/catalog/Books(7dd3ef30-3844-4ddf-8ba3-4b6bcbea5212)
+
+
+###
+# Get all Orders
+#
+GET http://localhost:4004/odata/v4/catalog/Orders
+
+
+###
+# Place a new Order
+#
+POST http://localhost:4004/odata/v4/catalog/Orders
+Content-Type: application/json
+
+{
+    "book_ID": "550e8400-e29b-41d4-a716-446655440001",
+    "quantity": 2
+}
+
+###
+# Try ordering wrong book (should fail)
+#
+POST http://localhost:4004/odata/v4/catalog/Orders
+Content-Type: application/json
+
+{
+    "book_ID": "550e8400-e29b-41d4-a716-44665544000z",
+    "quantity": 1
+}
+
+
+###
+# Try ordering more than available stock (should fail)
+#
+POST http://localhost:4004/odata/v4/catalog/Orders
+Content-Type: application/json
+
+{
+    "book_ID": "550e8400-e29b-41d4-a716-446655440001",
+    "quantity": 9999
+}
+
+
+###
+# Try adding book with empty title (should fail)
+#
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+    "title": "",
+    "author": "Test Author",
+    "price": 100,
+    "stock": 10
+}
+
+###
+# Try adding book with negative price (should fail)
+#
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+    "title": "Test Book",
+    "author": "Test Author",
+    "price": -50,
+    "stock": 10
+}
+
+###
+# Try adding book with negative stock (should fail)
+#
+POST http://localhost:4004/odata/v4/catalog/Books
+Content-Type: application/json
+
+{
+    "title": "Test Book",
+    "author": "Test Author",
+    "price": 100,
+    "stock": -5
+}
