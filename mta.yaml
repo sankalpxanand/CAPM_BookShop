@@ -1,15 +1,15 @@
 _schema-version: 3.3.0
-ID: CAPM_Books
+ID: CAPM_BookShop
 description: A simple CAP project.
 version: 1.0.0
 modules:
-- name: CAPM_Books-srv
+- name: CAPM_BookShop-srv
   type: nodejs
   path: gen/srv
   requires:
-  - name: CAPM_Books-db
-  - name: CAPM_Books-uaa
-  - name: CAPM_Books-destination-service
+  - name: CAPM_BookShop-db
+  - name: CAPM_BookShop-uaa
+  - name: CAPM_BookShop-destination-service
   provides:
   - name: srv-api
     properties:
@@ -20,29 +20,29 @@ modules:
   build-parameters:
     builder: npm-ci
 
-- name: CAPM_Books-db-deployer
+- name: CAPM_BookShop-db-deployer
   type: hdb
   path: gen/db
   requires:
-  - name: CAPM_Books-db
+  - name: CAPM_BookShop-db
   parameters:
     buildpack: nodejs_buildpack
 
-- name: CAPM_Books-app-content
+- name: CAPM_BookShop-app-content
   type: com.sap.application.content
   path: .
   requires:
-  - name: CAPM_Books-repo-host
+  - name: CAPM_BookShop-repo-host
     parameters:
       content-target: true
-  - name: CAPM_Books-uaa
+  - name: CAPM_BookShop-uaa
     parameters:
       service-key:
-        name: CAPM_Books-uaa-key
-  - name: CAPM_Books-destination-service
+        name: CAPM_BookShop-uaa-key
+  - name: CAPM_BookShop-destination-service
     parameters:
       service-key:
-        name: CAPM_Books-destination-service-key
+        name: CAPM_BookShop-destination-service-key
   build-parameters:
     build-result: resources
     requires:
@@ -78,27 +78,27 @@ modules:
     supported-platforms: []
 
 resources:
-- name: CAPM_Books-db
+- name: CAPM_BookShop-db
   type: com.sap.xs.hdi-container
   parameters:
     service: hana
     service-plan: hdi-shared
 
-- name: CAPM_Books-uaa
+- name: CAPM_BookShop-uaa
   type: org.cloudfoundry.managed-service
   parameters:
     service: xsuaa
     service-plan: application
     path: ./xs-security.json
 
-- name: CAPM_Books-repo-host
+- name: CAPM_BookShop-repo-host
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
-    service-name: CAPM_Books-html5-service
+    service-name: CAPM_BookShop-html5-service
     service-plan: app-host
 
-- name: CAPM_Books-destination-service
+- name: CAPM_BookShop-destination-service
   type: org.cloudfoundry.managed-service
   requires:
   - name: srv-api
@@ -121,7 +121,7 @@ resources:
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
-    service-name: CAPM_Books-destination-service
+    service-name: CAPM_BookShop-destination-service
     service-plan: lite
 
 parameters:
