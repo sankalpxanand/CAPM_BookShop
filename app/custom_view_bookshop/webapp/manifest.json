@@ -1,7 +1,7 @@
 {
   "_version": "1.83.0",
   "sap.app": {
-    "id": "customviewbookshop",
+    "id": "thebookshop",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -27,8 +27,8 @@
     },
     "crossNavigation": {
       "inbounds": {
-        "customviewbookshop-display": {
-          "semanticObject": "customviewbookshop",
+        "thebookshop-display": {
+          "semanticObject": "thebookshop",
           "action": "display",
           "title": "Custom View Bookshop",
           "signature": {
@@ -72,7 +72,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "customviewbookshop.i18n.i18n"
+          "bundleName": "thebookshop.i18n.i18n"
         }
       },
       "": {
@@ -100,9 +100,9 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "customviewbookshop.view",
+        "path": "thebookshop.view",
         "async": true,
-        "viewPath": "customviewbookshop.view"
+        "viewPath": "thebookshop.view"
       },
       "routes": [
         {
@@ -121,7 +121,7 @@
       }
     },
     "rootView": {
-      "viewName": "customviewbookshop.view.App",
+      "viewName": "thebookshop.view.App",
       "type": "XML",
       "id": "App",
       "async": true

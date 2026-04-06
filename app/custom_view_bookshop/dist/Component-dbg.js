@@ -1,10 +1,10 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "customviewbookshop/model/models"
+    "thebookshop/model/models"
 ], (UIComponent, models) => {
     "use strict";
 
-    return UIComponent.extend("customviewbookshop.Component", {
+    return UIComponent.extend("thebookshop.Component", {
         metadata: {
             manifest: "json",
             interfaces: [

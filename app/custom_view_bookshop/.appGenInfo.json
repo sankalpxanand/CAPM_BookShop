@@ -18,6 +18,6 @@
     "template": "Basic V4",
     "generatorName": "SAP Fiori Application Generator",
     "entityRelatedConfig": [],
-    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/customviewbookshop/index.html"
+    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/thebookshop/index.html"
   }
 }

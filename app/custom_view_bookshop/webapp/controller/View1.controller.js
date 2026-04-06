@@ -8,7 +8,7 @@ sap.ui.define([
 ], (Controller, MessageBox, Fragment, MessageToast, Filter, FilterOperator) => {
     "use strict";
 
-    return Controller.extend("customviewbookshop.controller.View1", {
+    return Controller.extend("thebookshop.controller.View1", {
         onInit() {
         },
 
@@ -84,7 +84,7 @@ sap.ui.define([
             if(!this._oActionSheet){
                 Fragment.load({
                     id: this.getView().getId(),
-                    name: "customviewbookshop.view.ActionSheet",
+                    name: "thebookshop.view.ActionSheet",
                     controller: this
                 }).then(function(oActionSheet){
                     this._oActionSheet = oActionSheet;

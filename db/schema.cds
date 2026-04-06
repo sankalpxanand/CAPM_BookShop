@@ -1,4 +1,4 @@
-namespace my.bookshop;
+namespace my.listbooks;
 entity Books{
     key ID : UUID;
     title : String;

@@ -47,17 +47,17 @@ modules:
     build-result: resources
     requires:
     - artifacts:
-        - bookshop.zip
-      name: bookshop
+        - listbooks.zip
+      name: listbooks
       target-path: resources/
     - artifacts:
-        - customviewbookshop.zip
-      name: customviewbookshop
+        - thebookshop.zip
+      name: thebookshop
       target-path: resources/
 
-- name: bookshop
+- name: listbooks
   type: html5
-  path: app/bookshop
+  path: app/listbooks
   build-parameters:
     build-result: dist
     builder: custom
@@ -66,7 +66,7 @@ modules:
     - npm run build:cf
     supported-platforms: []
 
-- name: customviewbookshop
+- name: thebookshop
   type: html5
   path: app/custom_view_bookshop
   build-parameters:

@@ -2,7 +2,7 @@
 
 specVersion: "4.0"
 metadata:
-  name: customviewbookshop
+  name: thebookshop
 type: application
 resources:
   configuration:
@@ -16,7 +16,7 @@ builder:
     - name: ui5-task-zipper
       afterTask: generateCachebusterInfo
       configuration:
-        archiveName: customviewbookshop
+        archiveName: thebookshop
         relativePaths: true
         additionalFiles:
           - xs-app.json

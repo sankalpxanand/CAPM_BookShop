@@ -1,2 +1,2 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"],e=>{"use strict";return e.extend("customviewbookshop.controller.App",{onInit(){}})});
+sap.ui.define(["sap/ui/core/mvc/Controller"],e=>{"use strict";return e.extend("thebookshop.controller.App",{onInit(){}})});
 //# sourceMappingURL=App.controller.js.map

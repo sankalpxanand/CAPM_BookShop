@@ -24,7 +24,7 @@ An SAP Fiori application created with Basic View.
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  To launch the generated app, start your CAP project:  and navigate to the following location in your browser:
 
-http://localhost:4004/customviewbookshop/index.html
+http://localhost:4004/thebookshop/index.html
 
 #### Pre-requisites:
 

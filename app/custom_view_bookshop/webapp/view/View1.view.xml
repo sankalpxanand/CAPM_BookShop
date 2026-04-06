@@ -1,4 +1,4 @@
-<mvc:View controllerName="customviewbookshop.controller.View1"
+<mvc:View controllerName="thebookshop.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:tnt="sap.tnt">
