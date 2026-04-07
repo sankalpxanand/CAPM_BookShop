@@ -191,8 +191,10 @@
                     </headerToolbar>
                     <HBox id="_IDGenHBoxOrder1">
                         <VBox id="_IDGenVBoxOrder1">
-                            <Label id="_IDGenLabelBook" text="Book ID"></Label>
-                            <Input placeholder="Enter Book ID" id="orderBookId"></Input>
+                            <Label id="_IDGenLabelBook" text="Select Book"></Label>
+                            <Select id="orderBookSelect" items="{/Books}">
+                                <core:Item id="_IDGenItem" xmlns:core="sap.ui.core" key="{ID}" text="{title}" />
+                            </Select>
                         </VBox>
                         <VBox id="_IDGenVBoxOrder2">
                             <Label id="_IDGenLabelQty" text="Quantity"></Label>
@@ -216,6 +218,9 @@
                             <Column id="_IDGenColumn9">
                                 <Text id="_IDGenText14" text="Book ID"></Text>
                             </Column>
+                            <Column id="_IDGenColumn13">
+                                <Text id="_IDGenText23" text="Book Name"></Text>
+                            </Column>
                             <Column id="_IDGenColumn10">
                                 <Text id="_IDGenText15" text="Quantity"></Text>
                             </Column>
@@ -231,6 +236,7 @@
                                 <cells>
                                     <Text id="_IDGenText18" text="{ID}"></Text>
                                     <Text id="_IDGenText19" text="{book_ID}"></Text>
+                                    <Text id="_IDGenText24" text="{book/title}"></Text>
                                     <Text id="_IDGenText20" text="{quantity}"></Text>
                                     <Text id="_IDGenText21" text="{totalPrice}"></Text>
                                     <Text id="_IDGenText22" text="{orderDate}"></Text>

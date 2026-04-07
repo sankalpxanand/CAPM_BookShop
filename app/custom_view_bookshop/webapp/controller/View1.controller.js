@@ -229,12 +229,13 @@ sap.ui.define([
         },
 
         onSubmitOrder: function() {
-            var bookId = this.getView().byId("orderBookId").getValue();
+            var oSelect = this.getView().byId("orderBookSelect");
+            var bookId = oSelect.getSelectedItem().getKey();
             var quantity = parseInt(this.getView().byId("orderQuantity").getValue());
 
             // Basic frontend validation
-            if (!bookId.trim()) {
-                MessageBox.error("Please enter a Book ID");
+            if (!bookId) {
+                MessageBox.error("Please select a book");
                 return;
             }
 
@@ -253,7 +254,7 @@ sap.ui.define([
             oContext.created().then(() => {
                 MessageBox.success("Order placed successfully!");
                 // Clear the fields
-                this.getView().byId("orderBookId").setValue(null);
+                this.getView().byId("orderBookSelect").setValue(null);
                 this.getView().byId("orderQuantity").setValue(null);
             }).catch((err) => {
                 MessageBox.error("Error placing order: " + err.message);

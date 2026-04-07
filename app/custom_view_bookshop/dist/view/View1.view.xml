@@ -15,7 +15,7 @@
 					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" priority="NeverOverflow"/>
 				</layoutData>
 			</Image>
-			<Title text="Prоduct Name" wrapping="false" id="productName">
+			<Title text="The BookShop" wrapping="false" id="productName">
 				<layoutData>
 					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData2" priority="Disappear"/>
 				</layoutData>
@@ -25,41 +25,6 @@
 					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" priority="Disappear"/>
 				</layoutData>
 			</Text>
-			<ToolbarSpacer id="_IDGenToolbarSpacer" />
-			<SearchField width="25rem" id="searchField">
-				<layoutData>
-					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData4" priority="Low" group="1"/>
-				</layoutData>
-			</SearchField>
-			<Button visible="false" icon="sap-icon://search" type="Transparent" id="searchButton" tooltip="Search"/>
-			<OverflowToolbarButton id="_IDGenOverflowToolbarButton" icon="sap-icon://da" type="Transparent" tooltip="Joule" text="Joule">
-				<layoutData>
-					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData5" group="2"/>
-				</layoutData>
-			</OverflowToolbarButton>
-			<OverflowToolbarButton id="_IDGenOverflowToolbarButton1" icon="sap-icon://source-code" type="Transparent" tooltip="Action 1" text="Action 1">
-				<layoutData>
-					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData6" group="2"/>
-				</layoutData>
-			</OverflowToolbarButton>
-			<OverflowToolbarButton id="_IDGenOverflowToolbarButton2" icon="sap-icon://card" type="Transparent" tooltip="Action 2" text="Action 2">
-				<layoutData>
-					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData7" group="2"/>
-				</layoutData>
-			</OverflowToolbarButton>
-			<OverflowToolbarButton id="_IDGenOverflowToolbarButton3" icon="sap-icon://action-settings" type="Transparent" text="Settings"/>
-			<Button id="_IDGenButton3" icon="sap-icon://bell" type="Transparent" tooltip="Notification">
-				<layoutData>
-					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData8" priority="NeverOverflow"/>
-				</layoutData>
-			</Button>
-			<tnt:ToolHeaderUtilitySeparator id="_IDGenToolHeaderUtilitySeparator"/>
-			<OverflowToolbarButton id="_IDGenOverflowToolbarButton4" icon="sap-icon://grid" type="Transparent" text="My Products" tooltip="My Products"/>
-			<Avatar id="_IDGenAvatar" src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" press=".onAvatarPressed" tooltip="Profile">
-				<layoutData>
-					<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData9" priority="NeverOverflow"/>
-				</layoutData>
-			</Avatar>
 		</tnt:ToolHeader>
 
         <HBox id="_IDGenHBox4" >
@@ -67,37 +32,15 @@
                 <!--side navigation-->
                 <tnt:SideNavigation id="sideNavigation" selectedKey="walked" expanded="true">
                     <tnt:NavigationList id="_IDGenNavigationList1">
-                        <tnt:NavigationListItem id="_IDGenNavigationListItem" text="Home" icon="sap-icon://home" />
                         <tnt:NavigationListGroup id="_IDGenNavigationListGroup" text="New">
                             <tnt:NavigationListItem id="_IDGenNavigationListItem1" text="Add Book" icon="sap-icon://people-connected" press=".onAddBookPressed" />
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem2" text="Building" icon="sap-icon://building" >
-                                <tnt:NavigationListItem id="_IDGenNavigationListItem3" text="Office 01" />
-                                <tnt:NavigationListItem id="_IDGenNavigationListItem4" text="Office 02" />
-                            </tnt:NavigationListItem>
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem5" text="Mileage" icon="sap-icon://mileage" >
-                                <tnt:NavigationListItem id="_IDGenNavigationListItem6" text="Driven" />
-                                <tnt:NavigationListItem text="Walked" id="walked" />
-                            </tnt:NavigationListItem>
                         </tnt:NavigationListGroup>
                         <tnt:NavigationListGroup id="_IDGenNavigationListGroup1" text="Recently used">
                             <tnt:NavigationListItem id="_IDGenNavigationListItem7" text="View Books" icon="sap-icon://kpi-managing-my-area" press=".onViewBookPressed" />
                             <tnt:NavigationListItem id="_IDGenNavigationListItem8" text="Place Order" icon="sap-icon://cart" press=".onPlaceOrderPressed" />
                             <tnt:NavigationListItem id="_IDGenNavigationListItem9" text="View Orders" icon="sap-icon://sales-order" press=".onViewOrdersPressed" />
                         </tnt:NavigationListGroup>
-                        <tnt:NavigationListGroup id="_IDGenNavigationListGroup2" text="Restricted" enabled="false">
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem10" text="Running" icon="sap-icon://physical-activity" />
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem11" text="Scissors" icon="sap-icon://scissors" />
-                        </tnt:NavigationListGroup>
-                        <tnt:NavigationListItem id="_IDGenNavigationListItem12" text="Transport" icon="sap-icon://passenger-train" />
                     </tnt:NavigationList>
-                    <tnt:fixedItem>
-                        <tnt:NavigationList id="_IDGenNavigationList2">
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem13" text="Bar Chart" icon="sap-icon://bar-chart" />
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem14" selectable="false" href="https://sap.com" target="_blank" text="External Link" icon="sap-icon://attachment" />
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem15" selectable="false" href="https://sap.com" target="_top" text="External Link _top" icon="sap-icon://attachment" />
-                            <tnt:NavigationListItem id="_IDGenNavigationListItem16" text="Compare" icon="sap-icon://compare" />
-                        </tnt:NavigationList>
-                    </tnt:fixedItem>
                 </tnt:SideNavigation>
             </VBox> 
 
@@ -109,9 +52,6 @@
                             <Title id="_IDGenTitle" text="Add a book"/>
                         </OverflowToolbar>
                     </headerToolbar>   
-                    <Breadcrumbs id="_IDGenBreadcrumbs1" currentLocationText="Add New Item">
-                        <Link id="_IDGenLink" text="Master"></Link>
-                    </Breadcrumbs>
 
                     <HBox id="_IDGenHBox" >
                         <VBox id="_IDGenVBox" >
