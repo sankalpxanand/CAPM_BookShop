@@ -4,8 +4,9 @@ sap.ui.define([
     "sap/ui/core/Fragment",
     "sap/m/MessageToast",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
-], (Controller, MessageBox, Fragment, MessageToast, Filter, FilterOperator) => {
+    "sap/ui/model/FilterOperator",
+    "sap/ui/model/Sorter"
+], (Controller, MessageBox, Fragment, MessageToast, Filter, FilterOperator,Sorter) => {
     "use strict";
 
     return Controller.extend("thebookshop.controller.View1", {
@@ -55,6 +56,7 @@ sap.ui.define([
             });
             oContext.created().then(() => {
                 MessageBox.success("Book added successfully");
+                this.getView().getModel().refresh()
                 this.getView().byId("title").setValue(null);
                 this.getView().byId("author").setValue(null);
                 this.getView().byId("price").setValue(null);
@@ -209,6 +211,7 @@ sap.ui.define([
 
             update_oModel.submitBatch("auto").then(function(){
                 resetBusy();
+                oView.getModel().refresh();
                 MessageBox.success("Book details are updated successfully");
             }).catch(function(err){
                 resetBusy();
@@ -226,6 +229,11 @@ sap.ui.define([
             this.hideAllPanels();
             var oPanel = this.byId("Panel5");
             oPanel.setVisible(true);
+
+            var oTable = this.byId("ordersTable");
+            var oBinding = oTable.getBinding("items");
+            var oSorter = new Sorter("orderDate", true);
+            oBinding.sort(oSorter);
         },
 
         onSubmitOrder: function() {
@@ -253,6 +261,7 @@ sap.ui.define([
 
             oContext.created().then(() => {
                 MessageBox.success("Order placed successfully!");
+                this.getView().getModel().refresh();
                 // Clear the fields
                 this.getView().byId("orderBookSelect").setValue(null);
                 this.getView().byId("orderQuantity").setValue(null);
@@ -260,6 +269,40 @@ sap.ui.define([
                 MessageBox.error("Error placing order: " + err.message);
                 console.log("Error placing order: " + err);
             });
+        },
+        
+        onOrderPress: function() {
+            // Get selected book from context
+            var oData = this._oSelectedContext.getObject();
+            
+            // Navigate to Place Order panel
+            this.hideAllPanels();
+            this.byId("Panel4").setVisible(true);
+
+            // Pre-select the book in the dropdown
+            var oSelect = this.byId("orderBookSelect");
+            
+            // Wait for select items to load then set selection
+            oSelect.getBinding("items").attachEventOnce("dataReceived", function() {
+                var aItems = oSelect.getItems();
+                var oMatchingItem = aItems.find(function(item) {
+                    return item.getKey() === oData.ID;
+                });
+                if (oMatchingItem) {
+                    oSelect.setSelectedItem(oMatchingItem);
+                }
+            });
+
+            // If items already loaded
+            var aItems = oSelect.getItems();
+            if (aItems.length > 0) {
+                var oMatchingItem = aItems.find(function(item) {
+                    return item.getKey() === oData.ID;
+                });
+                if (oMatchingItem) {
+                    oSelect.setSelectedItem(oMatchingItem);
+                }
+            }
         },
     });
 });
