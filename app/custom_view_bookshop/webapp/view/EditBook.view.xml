@@ -1,0 +1,45 @@
+<mvc:View controllerName="thebookshop.controller.EditBook"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="editBookPage" title="Edit Book" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <Panel class="sapUiResponsiveMargin">
+                <HBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Book ID"/>
+                        <Input id="itemCode" editable="false"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Title"/>
+                        <Input placeholder="Enter title" id="title1"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Author"/>
+                        <Input placeholder="Enter author" id="author1"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Price"/>
+                        <Input placeholder="Enter price" id="price1"/>
+                    </VBox>
+                </HBox>
+                <HBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Stock"/>
+                        <Input placeholder="Enter stock" id="stock1"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Location"/>
+                        <Input placeholder="Enter location" id="location1"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Genre"/>
+                        <Input placeholder="Enter genre" id="genre1"/>
+                    </VBox>
+                </HBox>
+                <HBox class="sapUiSmallMargin">
+                    <Button text="Update" press=".onUpdate"/>
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

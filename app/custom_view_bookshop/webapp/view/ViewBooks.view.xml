@@ -1,0 +1,34 @@
+<mvc:View controllerName="thebookshop.controller.ViewBooks"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="viewBooksPage" title="View Books" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <Panel headerText="Book Details" class="sapUiResponsiveMargin">
+                <Table id="booksTable" items="{/Books}">
+                    <columns>
+                        <Column><Text text="Title"/></Column>
+                        <Column><Text text="Author"/></Column>
+                        <Column><Text text="Price"/></Column>
+                        <Column><Text text="Stock"/></Column>
+                        <Column><Text text="Location"/></Column>
+                        <Column><Text text="Genre"/></Column>
+                        <Column><Text text="Action"/></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{title}"/>
+                                <Text text="{author}"/>
+                                <Text text="{price}"/>
+                                <Text text="{stock}"/>
+                                <Text text="{location}"/>
+                                <Text text="{genre}"/>
+                                <Button text="..." press=".onActionPressed"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

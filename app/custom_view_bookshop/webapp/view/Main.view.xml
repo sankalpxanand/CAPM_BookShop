@@ -1,0 +1,48 @@
+<mvc:View controllerName="thebookshop.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt">
+    <Page id="mainPage" showHeader="false">
+        <content>
+            <tnt:SideNavigation id="sideNavigation" expanded="true">
+                <tnt:NavigationList id="mainNavList">
+                    <tnt:NavigationListGroup id="adminGroup" text="Insert" visible="{= ${appState>/role} === 'admin'}">
+                        <tnt:NavigationListItem
+                            id="addBookNav"
+                            text="Add Book"
+                            icon="sap-icon://add"
+                            press=".onAddBookPressed"/>
+                    </tnt:NavigationListGroup>
+                    <tnt:NavigationListGroup id="generalGroup" text="Books">
+                        <tnt:NavigationListItem
+                            id="viewBooksNav"
+                            text="View Books"
+                            icon="sap-icon://kpi-managing-my-area"
+                            press=".onViewBooksPressed"/>
+                    </tnt:NavigationListGroup>
+                    <tnt:NavigationListGroup id="ordersGroup" text="Orders">
+                        <tnt:NavigationListItem
+                            id="placeOrderNav"
+                            text="Place Order"
+                            icon="sap-icon://cart"
+                            press=".onPlaceOrderPressed"/>
+                        <tnt:NavigationListItem
+                            id="viewOrdersNav"
+                            text="View Orders"
+                            icon="sap-icon://sales-order"
+                            press=".onViewOrdersPressed"/>
+                    </tnt:NavigationListGroup>
+                </tnt:NavigationList>
+                <tnt:fixedItem>
+                    <tnt:NavigationList id="fixedNavList">
+                        <tnt:NavigationListItem
+                            id="logoutNav"
+                            text="Logout"
+                            icon="sap-icon://log"
+                            press=".onLogoutPressed"/>
+                    </tnt:NavigationList>
+                </tnt:fixedItem>
+            </tnt:SideNavigation>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,25 @@
+<mvc:View controllerName="thebookshop.controller.PlaceOrder"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="placeOrderPage" title="Place Order" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <Panel class="sapUiResponsiveMargin">
+                <HBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Select Book"/>
+                        <Select id="orderBookSelect" items="{/Books}">
+                            <core:Item xmlns:core="sap.ui.core" key="{ID}" text="{title}"/>
+                        </Select>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Quantity"/>
+                        <Input placeholder="Enter quantity" id="orderQuantity" type="Number"/>
+                    </VBox>
+                </HBox>
+                <HBox class="sapUiSmallMargin">
+                    <Button text="Place Order" press=".onSubmitOrder"/>
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
