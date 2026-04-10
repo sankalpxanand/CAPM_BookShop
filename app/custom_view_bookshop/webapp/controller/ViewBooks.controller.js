@@ -34,6 +34,10 @@ sap.ui.define([
                     this._oActionSheet.openBy(oButton);
                 }.bind(this));
             } else {
+                // Update appState model every time it opens
+                this._oActionSheet.setModel(
+                        this.getOwnerComponent().getModel("appState"), "appState"
+                );
                 this._oActionSheet.openBy(oButton);
             }
         },

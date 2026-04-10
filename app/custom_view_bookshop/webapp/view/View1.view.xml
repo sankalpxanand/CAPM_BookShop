@@ -24,7 +24,7 @@
                         id="adminBtn"
                         text="Admin"
                         type="Emphasized"
-                        icon="sap-icon://manager"
+                        icon="sap-icon://person-placeholder"
                         press=".onAdminPressed"
                         class="sapUiMediumMarginEnd"
                         width="10rem"/>
@@ -32,7 +32,7 @@
                         id="userBtn"
                         text="User"
                         type="Default"
-                        icon="sap-icon://person-placeholder"
+                        icon="sap-icon://manager"
                         press=".onUserPressed"
                         width="10rem"/>
                 </HBox>

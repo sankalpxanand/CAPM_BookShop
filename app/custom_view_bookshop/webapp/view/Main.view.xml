@@ -25,7 +25,8 @@
                             id="placeOrderNav"
                             text="Place Order"
                             icon="sap-icon://cart"
-                            press=".onPlaceOrderPressed"/>
+                            press=".onPlaceOrderPressed"
+                            visible="{= ${appState>/role} === 'user'}"/>
                         <tnt:NavigationListItem
                             id="viewOrdersNav"
                             text="View Orders"
