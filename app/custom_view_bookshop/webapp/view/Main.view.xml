@@ -6,7 +6,7 @@
         <content>
             <tnt:SideNavigation id="sideNavigation" expanded="true">
                 <tnt:NavigationList id="mainNavList">
-                    <tnt:NavigationListGroup id="adminGroup" text="Insert" visible="{= ${appState>/role} === 'admin'}">
+                    <tnt:NavigationListGroup id="adminGroup" text="Insert">
                         <tnt:NavigationListItem
                             id="addBookNav"
                             text="Add Book"
@@ -25,8 +25,7 @@
                             id="placeOrderNav"
                             text="Place Order"
                             icon="sap-icon://cart"
-                            press=".onPlaceOrderPressed"
-                            visible="{= ${appState>/role} === 'user'}"/>
+                            press=".onPlaceOrderPressed"/>
                         <tnt:NavigationListItem
                             id="viewOrdersNav"
                             text="View Orders"

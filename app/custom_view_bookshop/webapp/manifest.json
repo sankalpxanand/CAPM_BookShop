@@ -97,7 +97,7 @@
         "routerClass": "sap.m.routing.Router",
         "controlAggregation": "pages",
         "controlId": "app",
-        "transition": "slide",
+        "transition": "sliding",
         "type": "View",
         "viewType": "XML",
         "path": "thebookshop.view",
@@ -107,7 +107,7 @@
       "routes": [
         {
           "name": "RouteView1",
-          "pattern": ":?query:",
+          "pattern": "",
           "target": ["TargetView1"]
         },
         {
@@ -144,13 +144,15 @@
       "targets": {
         "TargetView1": {
           "id": "View1",
-          "name": "View1"
+          "name": "View1",
+          "transition": "none"
         },
         "TargetMain": {
           "id": "Main",
           "name": "Main",
           "controlId": "app",
-          "controlAggregation": "pages"
+          "controlAggregation": "pages",
+          "transition": "none"
         },
         "TargetAddBook": {
           "id": "AddBook",

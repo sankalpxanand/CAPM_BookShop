@@ -1,11 +1,21 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], (Controller) => {
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/json/JSONModel"
+], (Controller, JSONModel) => {
     "use strict";
 
     return Controller.extend("thebookshop.controller.View1", {
 
         onInit: function() {
+            this.getOwnerComponent().getRouter()
+                .getRoute("RouteView1")
+                .attachPatternMatched(this._onView1Matched, this);
+        },
+
+        _onView1Matched: function() {
+            // Reset appState when landing on home page
+            var oModel = new JSONModel({ role: "" });
+            this.getOwnerComponent().setModel(oModel, "appState");
         },
 
         onAdminPressed: function() {
