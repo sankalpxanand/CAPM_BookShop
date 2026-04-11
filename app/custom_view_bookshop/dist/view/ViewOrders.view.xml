@@ -1,0 +1,30 @@
+<mvc:View controllerName="thebookshop.controller.ViewOrders"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="viewOrdersPage" title="View Orders" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <Panel headerText="All Orders" class="sapUiResponsiveMargin">
+                <Table id="ordersTable" items="{/Orders}">
+                    <columns>
+                        <Column><Text text="Order ID"/></Column>
+                        <Column><Text text="Book Name"/></Column>
+                        <Column><Text text="Quantity"/></Column>
+                        <Column><Text text="Total Price"/></Column>
+                        <Column><Text text="Order Date"/></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{ID}"/>
+                                <Text text="{book/title}"/>
+                                <Text text="{quantity}"/>
+                                <Text text="{totalPrice}"/>
+                                <Text text="{orderDate}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,41 @@
+<mvc:View controllerName="thebookshop.controller.AddBook"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="addBookPage" title="Add Book" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <Panel class="sapUiResponsiveMargin">
+                <HBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Title"/>
+                        <Input placeholder="Enter title" id="title"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Author"/>
+                        <Input placeholder="Enter author" id="author"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Price"/>
+                        <Input placeholder="Enter price" id="price"/>
+                    </VBox>
+                </HBox>
+                <HBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Stock"/>
+                        <Input placeholder="Enter stock" id="stock"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Location"/>
+                        <Input placeholder="Enter location" id="location"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="Genre"/>
+                        <Input placeholder="Enter genre" id="genre"/>
+                    </VBox>
+                </HBox>
+                <HBox class="sapUiSmallMargin">
+                    <Button text="Submit" press=".onSubmit"/>
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

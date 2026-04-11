@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/Sorter"],(e,t)=>{"use strict";return e.extend("thebookshop.controller.ViewOrders",{onInit:function(){this.getOwnerComponent().getRouter().getRoute("RouteViewOrders").attachPatternMatched(this._onViewOrdersMatched,this)},_onViewOrdersMatched:function(){var e=this.byId("ordersTable");var r=e.getBinding("items");if(r){r.sort(new t("orderDate",true))}},onNavBack:function(){this.getOwnerComponent().getRouter().navTo("RouteMain")}})});
+//# sourceMappingURL=ViewOrders.controller.js.map

@@ -61,7 +61,7 @@
 		}
 	},
 	"sap.ui5": {
-		"flexEnabled": true,
+		"flexEnabled": false,
 		"dependencies": {
 			"minUI5Version": "1.146.0",
 			"libs": {
@@ -105,7 +105,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"controlAggregation": "pages",
 				"controlId": "app",
-				"transition": "slide",
+				"transition": "sliding",
 				"type": "View",
 				"viewType": "XML",
 				"path": "thebookshop.view",
@@ -115,16 +115,96 @@
 			"routes": [
 				{
 					"name": "RouteView1",
-					"pattern": ":?query:",
+					"pattern": "",
 					"target": [
 						"TargetView1"
+					]
+				},
+				{
+					"name": "RouteMain",
+					"pattern": "main",
+					"target": [
+						"TargetMain"
+					]
+				},
+				{
+					"name": "RouteAddBook",
+					"pattern": "addbook",
+					"target": [
+						"TargetAddBook"
+					]
+				},
+				{
+					"name": "RouteViewBooks",
+					"pattern": "viewbooks",
+					"target": [
+						"TargetViewBooks"
+					]
+				},
+				{
+					"name": "RouteEditBook",
+					"pattern": "editbook/:bookId:",
+					"target": [
+						"TargetEditBook"
+					]
+				},
+				{
+					"name": "RouteViewOrders",
+					"pattern": "vieworders",
+					"target": [
+						"TargetViewOrders"
+					]
+				},
+				{
+					"name": "RoutePlaceOrder",
+					"pattern": "placeorder/:bookId:",
+					"target": [
+						"TargetPlaceOrder"
 					]
 				}
 			],
 			"targets": {
 				"TargetView1": {
 					"id": "View1",
-					"name": "View1"
+					"name": "View1",
+					"transition": "none"
+				},
+				"TargetMain": {
+					"id": "Main",
+					"name": "Main",
+					"controlId": "app",
+					"controlAggregation": "pages",
+					"transition": "none"
+				},
+				"TargetAddBook": {
+					"id": "AddBook",
+					"name": "AddBook",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				},
+				"TargetViewBooks": {
+					"id": "ViewBooks",
+					"name": "ViewBooks",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				},
+				"TargetEditBook": {
+					"id": "EditBook",
+					"name": "EditBook",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				},
+				"TargetPlaceOrder": {
+					"id": "PlaceOrder",
+					"name": "PlaceOrder",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				},
+				"TargetViewOrders": {
+					"id": "ViewOrders",
+					"name": "ViewOrders",
+					"controlId": "app",
+					"controlAggregation": "pages"
 				}
 			}
 		},
