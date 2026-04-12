@@ -1,16 +1,22 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageBox"
-], (Controller, MessageBox) => {
+    "sap/m/MessageBox",
+    "sap/ui/model/json/JSONModel"
+], (Controller, MessageBox, JSONModel) => {
     "use strict";
 
     return Controller.extend("thebookshop.controller.Main", {
 
         onInit: function() {
-            // Restore role from localStorage on page refresh
+            // Restore full state from localStorage on page refresh
             var sRole = localStorage.getItem("userRole");
             if (sRole) {
-                var oModel = new sap.ui.model.json.JSONModel({ role: sRole });
+                var oModel = new JSONModel({
+                    role: sRole,
+                    name: localStorage.getItem("userName"),
+                    email: localStorage.getItem("userEmail"),
+                    phone: localStorage.getItem("userPhone")
+                });
                 this.getOwnerComponent().setModel(oModel, "appState");
             }
 
@@ -25,9 +31,9 @@ sap.ui.define([
 
             // Show/hide nav items based on role
             setTimeout(function() {
-                this.byId("adminGroup").setVisible(sRole === "admin");
+                this.byId("addBookNav").setVisible(sRole === "admin");
                 this.byId("placeOrderNav").setVisible(sRole === "user");
-            }.bind(this), 0);
+            }.bind(this), 50);
         },
 
         onCollapseExpandPress: function() {
@@ -57,6 +63,9 @@ sap.ui.define([
                 onClose: function(oAction) {
                     if (oAction === MessageBox.Action.YES) {
                         localStorage.removeItem("userRole");
+                        localStorage.removeItem("userName");
+                        localStorage.removeItem("userEmail");
+                        localStorage.removeItem("userPhone");
                         this.getOwnerComponent().getRouter().navTo("RouteView1", {}, true);
                     }
                 }.bind(this)

@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="adminLoginDialog" title="Admin Login" draggable="true">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Label text="Email" class="sapUiSmallMarginBottom"/>
+                <Input
+                    id="adminEmail"
+                    placeholder="Enter your email"
+                    type="Email"
+                    class="sapUiSmallMarginBottom"/>
+                <Label text="Password" class="sapUiSmallMarginBottom"/>
+                <Input
+                    id="adminPassword"
+                    placeholder="Enter your password"
+                    type="Password"
+                    class="sapUiSmallMarginBottom"/>
+            </VBox>
+        </content>
+        <buttons>
+            <Button
+                text="Login"
+                type="Emphasized"
+                press=".onAdminLoginSubmit"/>
+            <Button
+                text="Cancel"
+                press=".onAdminLoginCancel"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

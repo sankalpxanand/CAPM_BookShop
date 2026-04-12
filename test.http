@@ -120,3 +120,45 @@ Content-Type: application/json
     "price": 100,
     "stock": -5
 }
+
+###
+# Admin Login
+POST http://localhost:4004/odata/v4/catalog/adminLogin
+Content-Type: application/json
+
+{
+    "email": "sankalp@bookshop.com",
+    "password": "Admin@123"
+}
+
+###
+# User Signup
+POST http://localhost:4004/odata/v4/catalog/userSignup
+Content-Type: application/json
+
+{
+    "name": "Test User",
+    "phone": "9876543211",
+    "email": "test@user.com",
+    "password": "User@123"
+}
+
+###
+# User Login
+POST http://localhost:4004/odata/v4/catalog/userLogin
+Content-Type: application/json
+
+{
+    "email": "test@user.com",
+    "password": "User@123"
+}
+
+###
+# User Login - NOT SIGNED UP (should give error)
+POST http://localhost:4004/odata/v4/catalog/userLogin
+Content-Type: application/json
+
+{
+    "email": "test123@user.com",
+    "password": "User@123"
+}

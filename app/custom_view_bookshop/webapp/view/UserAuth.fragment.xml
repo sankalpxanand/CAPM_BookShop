@@ -1,0 +1,74 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="userAuthDialog" title="User Portal" draggable="true">
+        <content>
+            <IconTabBar id="authTabBar" select=".onTabSelect">
+                <items>
+                    <!-- Login Tab -->
+                    <IconTabFilter id="loginTab" text="Login" key="login">
+                        <content>
+                            <VBox class="sapUiMediumMargin">
+                                <Label text="Email"/>
+                                <Input
+                                    id="userLoginEmail"
+                                    placeholder="Enter your email"
+                                    type="Email"
+                                    class="sapUiSmallMarginBottom"/>
+                                <Label text="Password"/>
+                                <Input
+                                    id="userLoginPassword"
+                                    placeholder="Enter your password"
+                                    type="Password"
+                                    class="sapUiSmallMarginBottom"/>
+                            </VBox>
+                        </content>
+                    </IconTabFilter>
+                    <!-- Signup Tab -->
+                    <IconTabFilter id="signupTab" text="Sign Up" key="signup">
+                        <content>
+                            <VBox class="sapUiMediumMargin">
+                                <Label text="Name"/>
+                                <Input
+                                    id="userSignupName"
+                                    placeholder="Enter your name"
+                                    class="sapUiSmallMarginBottom"/>
+                                <Label text="Phone"/>
+                                <Input
+                                    id="userSignupPhone"
+                                    placeholder="Enter your phone number"
+                                    class="sapUiSmallMarginBottom"/>
+                                <Label text="Email"/>
+                                <Input
+                                    id="userSignupEmail"
+                                    placeholder="Enter your email"
+                                    type="Email"
+                                    class="sapUiSmallMarginBottom"/>
+                                <Label text="Password"/>
+                                <Input
+                                    id="userSignupPassword"
+                                    placeholder="Enter your password"
+                                    type="Password"
+                                    class="sapUiSmallMarginBottom"/>
+                                <Label text="Confirm Password"/>
+                                <Input
+                                    id="userSignupConfirmPassword"
+                                    placeholder="Confirm your password"
+                                    type="Password"
+                                    class="sapUiSmallMarginBottom"/>
+                            </VBox>
+                        </content>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <buttons>
+            <Button
+                id="userAuthSubmitBtn"
+                text="Login"
+                type="Emphasized"
+                press=".onUserAuthSubmit"/>
+            <Button
+                text="Cancel"
+                press=".onUserAuthCancel"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

@@ -4,45 +4,84 @@
     xmlns:tnt="sap.tnt">
     <Page id="mainPage" showHeader="false">
         <content>
-            <tnt:SideNavigation id="sideNavigation" expanded="true">
-                <tnt:NavigationList id="mainNavList">
-                    <tnt:NavigationListGroup id="adminGroup" text="Insert">
-                        <tnt:NavigationListItem
-                            id="addBookNav"
-                            text="Add Book"
-                            icon="sap-icon://add"
-                            press=".onAddBookPressed"/>
-                    </tnt:NavigationListGroup>
-                    <tnt:NavigationListGroup id="generalGroup" text="Books">
-                        <tnt:NavigationListItem
-                            id="viewBooksNav"
-                            text="View Books"
-                            icon="sap-icon://kpi-managing-my-area"
-                            press=".onViewBooksPressed"/>
-                    </tnt:NavigationListGroup>
-                    <tnt:NavigationListGroup id="ordersGroup" text="Orders">
-                        <tnt:NavigationListItem
-                            id="placeOrderNav"
-                            text="Place Order"
-                            icon="sap-icon://cart"
-                            press=".onPlaceOrderPressed"/>
-                        <tnt:NavigationListItem
-                            id="viewOrdersNav"
-                            text="View Orders"
-                            icon="sap-icon://sales-order"
-                            press=".onViewOrdersPressed"/>
-                    </tnt:NavigationListGroup>
-                </tnt:NavigationList>
-                <tnt:fixedItem>
-                    <tnt:NavigationList id="fixedNavList">
-                        <tnt:NavigationListItem
-                            id="logoutNav"
-                            text="Logout"
-                            icon="sap-icon://log"
-                            press=".onLogoutPressed"/>
-                    </tnt:NavigationList>
-                </tnt:fixedItem>
-            </tnt:SideNavigation>
+            <HBox id="mainHBox">
+                <!-- Side Navigation -->
+                <VBox id="sideNavVBox">
+                    <tnt:ToolHeader id="toolHeader">
+                        <Button
+                            id="menuBtn"
+                            icon="sap-icon://menu2"
+                            type="Transparent"
+                            tooltip="Menu"
+                            press=".onCollapseExpandPress">
+                            <layoutData>
+                                <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                            </layoutData>
+                        </Button>
+                        <Title text="The BookShop" wrapping="false" id="shopTitle">
+                            <layoutData>
+                                <OverflowToolbarLayoutData priority="Disappear"/>
+                            </layoutData>
+                        </Title>
+                    </tnt:ToolHeader>
+                    <tnt:SideNavigation id="sideNavigation" expanded="true">
+                        <tnt:NavigationList id="mainNavList">
+                            <tnt:NavigationListItem
+                                id="addBookNav"
+                                text="Add Book"
+                                icon="sap-icon://add"
+                                press=".onAddBookPressed"/>
+                            <tnt:NavigationListItem
+                                id="viewBooksNav"
+                                text="View Books"
+                                icon="sap-icon://kpi-managing-my-area"
+                                press=".onViewBooksPressed"/>
+                            <tnt:NavigationListItem
+                                id="placeOrderNav"
+                                text="Place Order"
+                                icon="sap-icon://cart"
+                                press=".onPlaceOrderPressed"/>
+                            <tnt:NavigationListItem
+                                id="viewOrdersNav"
+                                text="View Orders"
+                                icon="sap-icon://sales-order"
+                                press=".onViewOrdersPressed"/>
+                        </tnt:NavigationList>
+                        <tnt:fixedItem>
+                            <tnt:NavigationList id="fixedNavList">
+                                <tnt:NavigationListItem
+                                    id="logoutNav"
+                                    text="Logout"
+                                    icon="sap-icon://log"
+                                    press=".onLogoutPressed"/>
+                            </tnt:NavigationList>
+                        </tnt:fixedItem>
+                    </tnt:SideNavigation>
+                </VBox>
+
+                <!-- Profile Card -->
+                <VBox id="profileCard" class="sapUiMediumMargin" width="300px">
+                    <Panel headerText="Profile Details" class="sapUiResponsiveMargin">
+                        <VBox class="sapUiSmallMargin">
+                            <Avatar
+                                src=""
+                                displaySize="L"
+                                class="sapUiSmallMarginBottom"
+                                initials="{= ${appState>/name} ? ${appState>/name}.charAt(0).toUpperCase() : '?'}"/>
+                            <Label text="Name" design="Bold"/>
+                            <Text text="{appState>/name}" class="sapUiSmallMarginBottom"/>
+                            <Label text="Email" design="Bold"/>
+                            <Text text="{appState>/email}" class="sapUiSmallMarginBottom"/>
+                            <Label text="Phone" design="Bold"/>
+                            <Text text="{appState>/phone}" class="sapUiSmallMarginBottom"/>
+                            <Label text="Role" design="Bold"/>
+                            <ObjectStatus
+                                text="{= ${appState>/role} === 'admin' ? 'Administrator' : 'User'}"
+                                state="{= ${appState>/role} === 'admin' ? 'Error' : 'Success'}"/>
+                        </VBox>
+                    </Panel>
+                </VBox>
+            </HBox>
         </content>
     </Page>
 </mvc:View>
