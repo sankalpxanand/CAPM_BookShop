@@ -12,7 +12,8 @@ sap.ui.define([
                 .attachPatternMatched(this._onViewOrdersMatched, this);
         },
 
-        _onViewOrdersMatched: function() {
+        _onViewOrdersMatched: function() { 
+            this.getView().getModel().refresh();
             // Sort orders by date descending every time page loads
             var oTable = this.byId("ordersTable");
             var oBinding = oTable.getBinding("items");

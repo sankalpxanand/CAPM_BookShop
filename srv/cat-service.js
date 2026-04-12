@@ -49,6 +49,9 @@ module.exports = class CatalogService extends cds.ApplicationService {
 
             // Set order date
             req.data.orderDate = new Date().toISOString()
+
+            // Set book title
+            req.data.bookTitle = book.title
         })
 
         // After creating an order, reduce stock
@@ -59,6 +62,12 @@ module.exports = class CatalogService extends cds.ApplicationService {
             await UPDATE(Books)
                 .set({ stock: { '-=': quantity } })
                 .where({ ID: book_ID })
+        })
+
+        // Before deleting a book, delete its orders first
+        this.before('DELETE', 'Books', async (req) => {
+            const { ID } = req.data
+            await DELETE.from(Orders).where({ book_ID: ID })
         })
 
         await super.init()

@@ -51,6 +51,7 @@ sap.ui.define([
                     if (oAction === MessageBox.Action.YES) {
                         oContext.delete("$direct").then(function () {
                             MessageBox.success("Book deleted successfully");
+                            // this.getView().getModel().refresh();
                         }).catch(function (oError) {
                             MessageBox.error("Error deleting book: " + oError);
                         });

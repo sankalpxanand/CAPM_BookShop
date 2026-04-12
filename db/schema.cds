@@ -13,6 +13,7 @@ entity Books{
 entity Orders {
     key ID        : UUID;
     book          : Association to Books;
+    bookTitle     : String;   
     quantity      : Integer;
     orderDate     : DateTime;
     totalPrice    : Decimal;
