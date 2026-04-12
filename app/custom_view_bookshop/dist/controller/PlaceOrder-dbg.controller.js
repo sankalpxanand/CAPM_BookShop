@@ -43,10 +43,19 @@ sap.ui.define([
                 return;
             }
 
+            var oAppState = this.getOwnerComponent().getModel("appState");
+            var sUserId = oAppState ? oAppState.getProperty("/ID") : null;
+
+            if (!sUserId) {
+                MessageBox.error("Please login first");
+                return;
+            }
+
             var oModel = this.getView().getModel();
             var oContext = oModel.bindList("/Orders").create({
                 "book_ID": bookId,
-                "quantity": quantity
+                "quantity": quantity,
+                "user_ID": sUserId
             });
 
             oContext.created().then(() => {

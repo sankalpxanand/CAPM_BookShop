@@ -33,6 +33,7 @@ entity Orders {
     book          : Association to Books;
     user          : Association to Users;
     bookTitle     : String;
+    userName      : String;
     quantity      : Integer;
     orderDate     : DateTime;
     totalPrice    : Decimal;

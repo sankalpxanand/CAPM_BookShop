@@ -43,14 +43,20 @@ module.exports = class CatalogService extends cds.ApplicationService {
             if (!book) {
                 return req.error(404, `Book with ID ${book_ID} not found`)
             }
-
             if (book.stock < quantity) {
                 return req.error(400, `Not enough stock! Available stock: ${book.stock}`)
+            }
+
+            const user = await SELECT.one.from(Users).where({ ID: user_ID })
+
+            if (!user) {
+                return req.error(404, `User not found`)
             }
 
             req.data.totalPrice = book.price * quantity
             req.data.orderDate = new Date().toISOString()
             req.data.bookTitle = book.title
+            req.data.userName = user.name
         })
 
         this.after('CREATE', 'Orders', async (result, req) => {

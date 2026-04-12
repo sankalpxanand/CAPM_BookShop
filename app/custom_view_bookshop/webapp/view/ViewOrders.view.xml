@@ -23,7 +23,7 @@
                             <cells>
                                 <Text text="{ID}"/>
                                 <Text text="{user_ID}"/>
-                                <Text text="{user/name}"/>
+                                <Text text="{userName}"/>
                                 <Text text="{bookTitle}"/>
                                 <Text text="{quantity}"/>
                                 <Text text="{totalPrice}"/>
