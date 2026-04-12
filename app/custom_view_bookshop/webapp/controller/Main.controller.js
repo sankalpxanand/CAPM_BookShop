@@ -7,6 +7,13 @@ sap.ui.define([
     return Controller.extend("thebookshop.controller.Main", {
 
         onInit: function() {
+            // Restore role from localStorage on page refresh
+            var sRole = localStorage.getItem("userRole");
+            if (sRole) {
+                var oModel = new sap.ui.model.json.JSONModel({ role: sRole });
+                this.getOwnerComponent().setModel(oModel, "appState");
+            }
+
             this.getOwnerComponent().getRouter()
                 .getRoute("RouteMain")
                 .attachPatternMatched(this._onMainMatched, this);
@@ -49,6 +56,7 @@ sap.ui.define([
                 actions: [MessageBox.Action.YES, MessageBox.Action.NO],
                 onClose: function(oAction) {
                     if (oAction === MessageBox.Action.YES) {
+                        localStorage.removeItem("userRole");
                         this.getOwnerComponent().getRouter().navTo("RouteView1", {}, true);
                     }
                 }.bind(this)

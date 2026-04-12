@@ -16,7 +16,7 @@
                         <ColumnListItem>
                             <cells>
                                 <Text text="{ID}"/>
-                                <Text text="{book/title}"/>
+                                <Text text="{bookTitle}"/>
                                 <Text text="{quantity}"/>
                                 <Text text="{totalPrice}"/>
                                 <Text text="{orderDate}"/>
