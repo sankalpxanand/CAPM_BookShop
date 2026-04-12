@@ -28,10 +28,14 @@ module.exports = class CatalogService extends cds.ApplicationService {
         // ORDERS VALIDATIONS
         // =====================
         this.before('CREATE', 'Orders', async (req) => {
-            const { book_ID, quantity } = req.data
+            const { book_ID, quantity, user_ID } = req.data
 
             if (!quantity || quantity <= 0) {
                 return req.error(400, 'Quantity must be greater than zero')
+            }
+
+            if (!user_ID) {
+                return req.error(400, 'User ID is required')
             }
 
             const book = await SELECT.one.from(Books).where({ ID: book_ID })
