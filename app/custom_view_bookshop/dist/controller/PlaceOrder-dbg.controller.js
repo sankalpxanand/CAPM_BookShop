@@ -14,31 +14,14 @@ sap.ui.define([
 
         _onPlaceOrderMatched: function(oEvent) {
             var sBookId = oEvent.getParameter("arguments").bookId;
+            
             if (sBookId) {
-                // Pre-select book if coming from ViewBooks
-                var oSelect = this.byId("orderBookSelect");
-                var oBinding = oSelect.getBinding("items");
-
-                if (oBinding && oSelect.getItems().length > 0) {
-                    this._preselectBook(sBookId);
-                } else {
-                    oSelect.getBinding("items").attachEventOnce("dataReceived", function() {
-                        this._preselectBook(sBookId);
-                    }.bind(this));
-                }
+                this.byId("orderBookSelect").setSelectedKey(sBookId);
+            } else {
+                this.byId("orderBookSelect").setSelectedKey("");
             }
         },
 
-        _preselectBook: function(sBookId) {
-            var oSelect = this.byId("orderBookSelect");
-            var aItems = oSelect.getItems();
-            var oMatch = aItems.find(function(item) {
-                return item.getKey() === sBookId;
-            });
-            if (oMatch) {
-                oSelect.setSelectedItem(oMatch);
-            }
-        },
 
         onNavBack: function() {
             this.getOwnerComponent().getRouter().navTo("RouteMain");
