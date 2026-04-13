@@ -7,7 +7,7 @@
                 <HBox>
                     <VBox class="sapUiSmallMargin">
                         <Label text="Book ID"/>
-                        <Input id="itemCode" editable="false"/>
+                        <Input id="itemCode" editable="false" enabled="false"/>
                     </VBox>
                     <VBox class="sapUiSmallMargin">
                         <Label text="Title"/>

@@ -3,7 +3,7 @@
     xmlns="sap.m">
     <Page id="viewOrdersPage" title="View Orders" showNavButton="true" navButtonPress=".onNavBack">
         <content>
-            <Panel headerText="All Orders" class="sapUiResponsiveMargin">
+            <Panel class="sapUiResponsiveMargin">
                 <Table id="ordersTable" items="{/Orders}">
                     <columns>
                         <Column><Text text="Order ID"/></Column>

@@ -3,7 +3,7 @@
     xmlns="sap.m">
     <Page id="viewBooksPage" title="View Books" showNavButton="true" navButtonPress=".onNavBack">
         <content>
-            <Panel headerText="Book Details" class="sapUiResponsiveMargin">
+            <Panel class="sapUiResponsiveMargin">
                 <Table id="booksTable" items="{/Books}">
                     <columns>
                         <Column><Text text="Title"/></Column>

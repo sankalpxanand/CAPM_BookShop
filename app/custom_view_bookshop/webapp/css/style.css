@@ -1,7 +1,3 @@
-/* ================================
-   THE BOOKSHOP - OCEAN BLUE THEME
-================================ */
-
 /* ---- Global ---- */
 body,
 .sapUiBody,
@@ -231,7 +227,8 @@ body,
 /* ---- Profile Card ---- */
 .bookshopProfile{
     width: 700px;
-    left: 400px;
+    margin: 0 auto;      
+    align-self: flex-start; 
 }
 
 [id$="__panel0-content"]{
@@ -253,4 +250,138 @@ body,
 .bookshopProfileDetails {
     padding: 16px !important;
     background: beige !important;
+}
+
+/* All functional pages*/
+.sapMPanelContent {
+    background: beige !important;
+}
+
+/* Add Book */
+[id$="addBookPage"] {
+    background: linear-gradient(180deg, rgb(224, 235, 236), #a7c7d4)!important;
+}
+[id$="container-thebookshop---AddBook--addBookPage-intHeader-BarPH"] {
+    background: beige !important;
+}
+[id$="container-thebookshop---AddBook--addBookPage-intHeader-BarLeft"]{
+    background: beige;
+}
+[id$="container-thebookshop---AddBook--addBookPage-title-inner"] {
+    color: black;
+    font-weight: bolder;
+}
+.sapMLabel {
+    font-weight: bold !important;
+    color: black;
+}
+
+/* View Books */
+[id$="viewBooksPage"] {
+    background: linear-gradient(180deg, rgb(224, 235, 236), #a7c7d4)!important;
+}
+[id$="container-thebookshop---ViewBooks--viewBooksPage-intHeader-BarPH"]{
+    background: beige !important;
+}
+[id$="container-thebookshop---ViewBooks--viewBooksPage-intHeader-BarLeft"]{
+    background: beige !important;
+}
+[id$="container-thebookshop---ViewBooks--viewBooksPage-title-inner"]{
+    color: black;
+    font-weight: bolder;
+}
+[id$="booksTable"] .sapMColumnHeader .sapMText {
+    color: white !important;
+    font-weight: bold;
+}
+[id$="booksTable"] .sapMListTblRow {
+    background-color: #bbdefb !important;  
+}
+[id$="booksTable"] .sapMListTblRow:nth-child(even) {
+    background-color: #90caf9 !important; 
+}
+[id$="booksTable"] .sapMListTblCell .sapMText {
+    color: black !important;  
+}
+[id$="booksTable"] .sapMListTblRow:hover {
+    background-color: #64b5f6 !important;
+}
+
+/* View Orders */
+[id$="viewOrdersPage"] {
+    background: linear-gradient(180deg, rgb(224, 235, 236), #a7c7d4)!important;
+}
+[id$="container-thebookshop---ViewOrders--viewOrdersPage-intHeader-BarPH"]{
+    background: beige !important;
+}
+[id$="container-thebookshop---ViewOrders--viewOrdersPage-intHeader-BarLeft"]{
+    background: beige !important;
+}
+[id$="container-thebookshop---ViewOrders--viewOrdersPage-title-inner"]{
+    color: black;
+    font-weight: bolder;
+}
+[id$="ordersTable"] .sapMColumnHeader .sapMText {
+    color: white !important;
+    font-weight: bold;
+}
+[id$="ordersTable"] .sapMListTblRow {
+    background-color: #bbdefb !important;  
+}
+[id$="ordersTable"] .sapMListTblRow:nth-child(even) {
+    background-color: #90caf9 !important; 
+}
+[id$="ordersTable"] .sapMListTblCell .sapMText {
+    color: black !important;  
+}
+[id$="ordersTable"] .sapMListTblRow:hover {
+    background-color: #64b5f6 !important;
+}
+
+/* Place Orders */
+[id$="placeOrderPage"] {
+    background: linear-gradient(180deg, rgb(224, 235, 236), #a7c7d4)!important;
+}
+[id$="container-thebookshop---PlaceOrder--placeOrderPage-intHeader-BarPH"] {
+    background: beige !important;
+}
+[id$="container-thebookshop---PlaceOrder--placeOrderPage-intHeader-BarLeft"]{
+    background: beige;
+}
+[id$="container-thebookshop---PlaceOrder--placeOrderPage-title-inner"] {
+    color: black;
+    font-weight: bolder;
+}
+[id$="orderBookSelect"] {
+    background-color: #e3f2fd !important;
+    color: black !important;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+/* Edit Books */
+[id$="editBookPage"] {
+    background: linear-gradient(180deg, rgb(224, 235, 236), #a7c7d4)!important;
+}
+[id$="container-thebookshop---EditBook--editBookPage-intHeader-BarPH"]{
+    background: beige !important;
+}
+[id$="container-thebookshop---EditBook--editBookPage-intHeader-BarLeft"]{
+    background: beige !important;
+}
+[id$="container-thebookshop---EditBook--editBookPage-title-inner"]{
+    color: black;
+    font-weight: bolder;
+}
+.sapMLabel {
+    font-weight: bold !important;
+    color: black;
+}
+
+/* Input field background */
+.sapMInputBaseInner {
+    background-color: #e3f2fd !important;
+    color: black !important;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
 }
