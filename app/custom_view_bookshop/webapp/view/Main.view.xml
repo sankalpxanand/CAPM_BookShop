@@ -4,10 +4,10 @@
     xmlns:tnt="sap.tnt">
     <Page id="mainPage" showHeader="false">
         <content>
-            <HBox id="mainHBox">
+            <HBox id="mainHBox" height="100%">
                 <!-- Side Navigation -->
-                <VBox id="sideNavVBox">
-                    <tnt:ToolHeader id="toolHeader">
+                <VBox id="sideNavVBox" class="bookshopSideNav" height="100vh">
+                    <tnt:ToolHeader id="toolHeader" class="bookshopToolHeader">
                         <Button
                             id="menuBtn"
                             icon="sap-icon://menu2"
@@ -24,7 +24,7 @@
                             </layoutData>
                         </Title>
                     </tnt:ToolHeader>
-                    <tnt:SideNavigation id="sideNavigation" expanded="true">
+                    <tnt:SideNavigation id="sideNavigation" expanded="true" class="bookshopToolBody">
                         <tnt:NavigationList id="mainNavList">
                             <tnt:NavigationListItem
                                 id="addBookNav"
@@ -60,24 +60,26 @@
                 </VBox>
 
                 <!-- Profile Card -->
-                <VBox id="profileCard" class="sapUiMediumMargin" width="300px">
-                    <Panel headerText="Profile Details" class="sapUiResponsiveMargin">
-                        <VBox class="sapUiSmallMargin">
+                <VBox class="bookshopProfile">
+                    <Panel class="bookshopProfileCard">
+                        <VBox class="bookshopProfileHeader" alignItems="Center">
                             <Avatar
-                                src=""
                                 displaySize="L"
-                                class="sapUiSmallMarginBottom"
+                                class="bookshopAvatar"
                                 initials="{= ${appState>/name} ? ${appState>/name}.charAt(0).toUpperCase() : '?'}"/>
-                            <Label text="Name" design="Bold"/>
-                            <Text text="{appState>/name}" class="sapUiSmallMarginBottom"/>
-                            <Label text="Email" design="Bold"/>
-                            <Text text="{appState>/email}" class="sapUiSmallMarginBottom"/>
-                            <Label text="Phone" design="Bold"/>
-                            <Text text="{appState>/phone}" class="sapUiSmallMarginBottom"/>
-                            <Label text="Role" design="Bold"/>
-                            <ObjectStatus
+                            <Title
+                                text="{appState>/name}"
+                                class="bookshopProfileName sapUiSmallMarginTop"
+                                textAlign="Center"/>
+                            <Text
                                 text="{= ${appState>/role} === 'admin' ? 'Administrator' : 'User'}"
-                                state="{= ${appState>/role} === 'admin' ? 'Error' : 'Success'}"/>
+                                class="bookshopProfileRole"/>
+                        </VBox>
+                        <VBox class="bookshopProfileDetails">
+                            <Label text="EMAIL" class="bookshopProfileLabel"/>
+                            <Text text="{appState>/email}" class="bookshopProfileValue"/>
+                            <Label text="PHONE" class="bookshopProfileLabel"/>
+                            <Text text="{appState>/phone}" class="bookshopProfileValue"/>
                         </VBox>
                     </Panel>
                 </VBox>

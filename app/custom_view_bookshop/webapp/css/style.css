@@ -1,1 +1,256 @@
-/* Enter your custom styles here */
+/* ================================
+   THE BOOKSHOP - OCEAN BLUE THEME
+================================ */
+
+/* ---- Global ---- */
+body,
+.sapUiBody,
+.sapMPage,
+.sapMTitle,
+.sapMText,
+.sapMLabel,
+.sapMBtn,
+.sapMBtnContent,
+.sapMInput,
+.sapMTable
+{
+    font-family: 'Courier New', Courier, monospace !important;
+    
+}
+
+/* ---- Landing Page ---- */
+.bookshopLanding {
+    background: linear-gradient(135deg, #4079b6 0%, #60a4dc 50%, #64d3e1 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookshopWelcomeCard {
+    background: transparent;
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+}
+
+.bookshopTitle {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin-bottom: 8px !important;
+}
+
+.bookshopSubtitle {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 1rem !important;
+    margin-bottom: 32px !important;
+}
+
+/* ---- Buttons on Landing ---- */
+.bookshopAdminBtn .sapMBtnContent {
+    color: white !important;
+}
+
+.bookshopUserBtn .sapMBtnContent {
+    color: white !important;
+}
+
+.bookshopAdminBtn {
+    background: transparent !important;
+    color: transparent !important;
+    border: 2px solid !important;
+    border-radius: 50px !important;
+    min-width: 160px !important;
+    height: 44px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    letter-spacing: 0.3px !important;
+}
+
+.bookshopAdminBtn:hover {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: transparent !important;
+}
+
+.bookshopUserBtn {
+    background: transparent !important;
+    color: transparent !important;
+    border: 2px solid !important;
+    border-radius: 50px !important;
+    min-width: 160px !important;
+    height: 44px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    letter-spacing: 0.3px !important;
+}
+
+.bookshopUserBtn:hover {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: transparent !important;
+}
+
+/* ---- Admin Login Dialog ---- */
+.adminLoginDialog .sapMDialogTitleGroup {
+    background: linear-gradient(135deg, #1565C0, #00838F) !important;
+}
+
+.adminLoginDialog .sapMDialogTitleGroup .sapMTitle {
+    color: white !important;
+}
+
+.adminLoginDialog .sapMDialogScrollCont {
+    background: #F8FBFF !important;
+    padding: 24px !important;
+}
+
+.adminLoginDialog .sapMDialogFooter {
+    background: #F8FBFF !important;
+    border-top: 1px solid #E3F2FD !important;
+}
+
+.adminLoginDialog .sapMInputBase {
+    border: 1.5px solid #90CAF9 !important;
+    border-radius: 8px !important;
+    background: white !important;
+}
+
+.adminLoginDialog .sapMLabel {
+    color: #1565C0 !important;
+    font-weight: 600 !important;
+}
+
+.adminLoginDialog .sapMDialogFooter .sapMBtn:first-child .sapMBtnInner {
+    background: linear-gradient(135deg, #1565C0, #00838F) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+.adminLoginDialog .sapMDialogFooter .sapMBtn:last-child .sapMBtnInner {
+    background: transparent !important;
+    color: #1565C0 !important;
+    border: 1.5px solid #1565C0 !important;
+    border-radius: 8px !important;
+}
+
+/* ---- User Auth Dialog ---- */
+.userAuthDialog .sapMDialogTitleGroup {
+    background: linear-gradient(135deg, #00838F, #1565C0) !important;
+}
+
+.userAuthDialog .sapMDialogTitleGroup .sapMTitle {
+    color: white !important;
+}
+
+.userAuthDialog .sapMDialogScrollCont {
+    background: #F8FBFF !important;
+    padding: 24px !important;
+}
+
+.userAuthDialog .sapMDialogFooter {
+    background: #F8FBFF !important;
+    border-top: 1px solid #E3F2FD !important;
+}
+
+.userAuthDialog .sapMInputBase {
+    border: 1.5px solid #90CAF9 !important;
+    border-radius: 8px !important;
+    background: white !important;
+}
+
+.userAuthDialog .sapMLabel {
+    color: #1565C0 !important;
+    font-weight: 600 !important;
+}
+
+.userAuthDialog .sapMDialogFooter .sapMBtn:first-child .sapMBtnInner {
+    background: linear-gradient(135deg, #00838F, #1565C0) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+.userAuthDialog .sapMDialogFooter .sapMBtn:last-child .sapMBtnInner {
+    background: transparent !important;
+    color: #00838F !important;
+    border: 1.5px solid #00838F !important;
+    border-radius: 8px !important;
+}
+
+/* ---- IconTabBar in User Auth ---- */
+.userAuthDialog .sapMITBSelected .sapMITBText {
+    color: #1565C0 !important;
+    font-weight: 700 !important;
+}
+
+.userAuthDialog .sapMITBSelected .sapMITBSep {
+    background: #1565C0 !important;
+}
+
+/* ---- Main Page - Side Navigation ---- */
+
+[id$="mainHBox"] {
+    background: linear-gradient(180deg, rgb(224, 235, 236), #a7c7d4)!important;
+}
+
+/* ---- Tool Header ---- */
+.bookshopToolHeader {
+    background: #021e3c !important;
+}
+.bookshopToolHeader [id$="shopTitle"] {
+    color: white !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+}
+.bookshopToolHeader .sapMBtnIcon {
+    color: white !important;
+}
+.bookshopToolHeader .sapMBtnIcon:hover {
+    color: #021e3c !important;
+}
+
+/* ---- Tool Body ---- */
+.bookshopToolBody {
+    background: beige !important;
+    height: 95vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+
+/* ---- Profile Card ---- */
+.bookshopProfile{
+    width: 700px;
+    left: 400px;
+}
+
+[id$="__panel0-content"]{
+    background-color: rgb(219, 234, 236);
+}
+.bookshopProfileCard {
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(92, 145, 202, 0.15) !important;
+    overflow: hidden !important;
+}
+
+.bookshopProfileHeader {
+    background: beige !important;
+    padding: 24px 16px !important;
+    text-align: center !important;
+    border-bottom: 1px solid black;
+}
+
+.bookshopProfileDetails {
+    padding: 16px !important;
+    background: beige !important;
+}

@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-    <Dialog id="adminLoginDialog" title="Admin Login" draggable="true">
+    <Dialog id="adminLoginDialog" title="Admin Login" draggable="true" class="adminLoginDialog">
         <content>
             <VBox class="sapUiMediumMargin">
                 <Label text="Email" class="sapUiSmallMarginBottom"/>

@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-    <Dialog id="userAuthDialog" title="User Portal" draggable="true">
+    <Dialog id="userAuthDialog" title="User Portal" draggable="true" class="userAuthDialog">
         <content>
             <IconTabBar id="authTabBar" select=".onTabSelect">
                 <items>
