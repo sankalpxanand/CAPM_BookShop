@@ -55,6 +55,37 @@ modules:
       name: thebookshop
       target-path: resources/
 
+- name: CAPM_BookShop-destination-content
+  type: com.sap.application.content
+  requires:
+    - name: CAPM_BookShop-destination-service
+      parameters:
+        content-target: true
+    - name: CAPM_BookShop-repo-host
+      parameters:
+        service-key:
+          name: CAPM_BookShop-repo-host-key
+    - name: CAPM_BookShop-uaa
+      parameters:
+        service-key:
+          name: CAPM_BookShop-uaa-key
+  parameters:
+    content:
+      instance:
+        destinations:
+          - Name: CAPM_BookShop_html5_repo
+            ServiceInstanceName: CAPM_BookShop-html5-service
+            ServiceKeyName: CAPM_BookShop-repo-host-key
+            sap.cloud.service: bookshop
+          - Name: CAPM_BookShop_uaa
+            Authentication: OAuth2UserTokenExchange
+            ServiceInstanceName: CAPM_BookShop-uaa
+            ServiceKeyName: CAPM_BookShop-uaa-key
+            sap.cloud.service: bookshop
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+
 - name: listbooks
   type: html5
   path: app/listbooks

@@ -1,42 +1,47 @@
 <mvc:View controllerName="thebookshop.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    xmlns:l="sap.ui.layout">
+    xmlns="sap.m">
     <Page id="homePage" showHeader="false">
         <content>
-            <VBox id="_IDGenVBox1"
-                class="sapUiMediumMargin"
+            <FlexBox
+                class="bookshopLanding"
                 justifyContent="Center"
                 alignItems="Center"
                 height="100%">
-
-                <Title id="_IDGenTitle"
-                    text="Welcome to The BookShop"
-                    level="H1"
-                    class="sapUiLargeMarginBottom"/>
-
-                <Text id="_IDGenText"
-                    text="Please select how you want to continue"
-                    class="sapUiSmallMarginBottom"/>
-
-                <HBox id="_IDGenHBox" justifyContent="Center" class="sapUiMediumMarginTop">
-                    <Button
-                        id="adminBtn"
-                        text="Admin"
-                        type="Emphasized"
-                        icon="sap-icon://person-placeholder"
-                        press=".onAdminPressed"
-                        class="sapUiMediumMarginEnd"
-                        width="10rem"/>
-                    <Button
-                        id="userBtn"
-                        text="User"
-                        type="Default"
-                        icon="sap-icon://manager"
-                        press=".onUserPressed"
-                        width="10rem"/>
-                </HBox>
-            </VBox>
+                <items>
+                    <VBox
+                        class="bookshopWelcomeCard"
+                        alignItems="Center">
+                        <Title
+                            text="📚 The BookShop"
+                            class="bookshopTitle"
+                            textAlign="Center"/>
+                        <Text
+                            text="Your favourite place to discover and order books"
+                            class="bookshopSubtitle"
+                            textAlign="Center"/>
+                        <HBox
+                            justifyContent="Center"
+                            class="sapUiMediumMarginTop"
+                            renderType="Bare">
+                            <Button
+                                id="adminBtn"
+                                text="Admin"
+                                icon="sap-icon://manager"
+                                press=".onAdminPressed"
+                                type="Transparent"
+                                class="bookshopAdminBtn sapUiMediumMarginEnd"/>
+                            <Button
+                                id="userBtn"
+                                text="User"
+                                icon="sap-icon://person-placeholder"
+                                press=".onUserPressed"
+                                type="Transparent"
+                                class="bookshopUserBtn"/>
+                        </HBox>
+                    </VBox>
+                </items>
+            </FlexBox>
         </content>
     </Page>
 </mvc:View>
