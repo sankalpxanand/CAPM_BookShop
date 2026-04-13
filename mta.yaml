@@ -76,12 +76,12 @@ modules:
           - Name: CAPM_BookShop_html5_repo
             ServiceInstanceName: CAPM_BookShop-html5-service
             ServiceKeyName: CAPM_BookShop-repo-host-key
-            sap.cloud.service: bookshop
+            sap.cloud.service: capm.books
           - Name: CAPM_BookShop_uaa
             Authentication: OAuth2UserTokenExchange
             ServiceInstanceName: CAPM_BookShop-uaa
             ServiceKeyName: CAPM_BookShop-uaa-key
-            sap.cloud.service: bookshop
+            sap.cloud.service: capm.books
         existing_destinations_policy: ignore
   build-parameters:
     no-source: true

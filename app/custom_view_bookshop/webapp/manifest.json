@@ -21,7 +21,7 @@
         "type": "OData",
         "settings": {
           "annotations": [],
-          "odataVersion": "4.01"
+          "odataVersion": "4.0"
         }
       }
     },
@@ -195,6 +195,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "bookshop"
+    "service": "capm.books"
   }
 }
